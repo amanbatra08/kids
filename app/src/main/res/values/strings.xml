@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">kids Aman</string>
+
+    <string name="meet_dyno">Meet Dyno, your new pet !</string>
+    <string name="feed">You need to feed him 5 apples to help him get to the next stage.</string>
+    <string name="feed_apple"> Feed apple</string>
+    <string name="play_Again"> Play Again</string>
+    <string name="congratulation">Congratulations! Dyno has grown big and strong with your help.</string>
+</resources>
