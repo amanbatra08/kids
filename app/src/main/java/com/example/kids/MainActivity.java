@@ -1,7 +1,9 @@
 package com.example.kids;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         Btn_play.setEnabled(true);
         Btn_feed.setVisibility(View.GONE);
         Btn_play.setVisibility(View.VISIBLE);
+        customalert();
     }
 
     private void functionplayagain(){
@@ -105,5 +108,22 @@ public class MainActivity extends AppCompatActivity {
         Btn_feed.setVisibility(View.VISIBLE);
         Btn_play.setVisibility(View.GONE);
 
+    }
+
+    private void customalert() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.CustomAlertDialog);
+        LayoutInflater inflateview = LayoutInflater.from(MainActivity.this);
+        final View view = inflateview.inflate(R.layout.customview, null);
+        final Button buttonOk = view.findViewById(R.id.buttonOk);
+        builder.setView(view);
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.setCancelable(false);
+        alertDialog.show();
+        buttonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.hide();
+            }
+        });
     }
 }
